@@ -122,3 +122,37 @@ print("Diccionario final:", estudiante)
 
     Se usa para evaluar un valor contra varios patrones, simplificar decisiones donde hay muchas opciones, hacer el código más ordenado y legible cuando reemplaza múltiples elif, desestructurar objetos más complejos (listas, tuplas, diccionarios).
 
+-Diferencias frente a if y elif?
+
+    Característica      if/elif/else                            match-case
+
+    Comparación         Cualquier condición                     Coincidencia exacta o patrones    
+    
+    Legilibilidad       Se vuelve largo con muchos elif         Mucho más limpio y ordenado
+
+    Uso típico          Condiciones lógicas y más complejas     Desiciones según valores específicos
+
+    Velocidad           Similar                                 Similar
+    
+    Patrón por defecto  else                                       _ 
+
+-Situaciones donde usarlo es más claro
+    match-case es ideal usarlo cuando hay muchas opciones posibles, tambien si se quiere un código limpio y fácil de leer. Cuando se está evaluando menús, estados, tipos de datos, comandos, etc.
+
+    Ejemplos más reales:
+    -Menú de opciones de un programa
+    -Responder a comandos de texto
+    -Procesr estados (activo, inactivo, error...)
+    -Evaluar el tipo de un dato recibido.
+-Ejemplo:
+    color = input("Ingresa un color: ")
+
+    match color.lower():
+        case "rojo":
+            print("Detenerse")
+        case "amarillo":
+            print("Precaución")
+        case "verde":
+            print("Avanzar")
+        case _:
+            print("Color no reconocido")
